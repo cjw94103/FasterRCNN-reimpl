@@ -42,3 +42,31 @@ $ wget http://images.cocodataset.org/annotations/image_info_test2017.zip
     └── val
 ```
 annotations 폴더에는 train_annotations.json, val_annotations.json 파일을 위치시켜주세요. train, val 폴더에는 학습에 사용 할 이미지 파일이 있습니다.
+# 3. Train
+먼저 config.json 파일을 만들어야 합니다. make_config.ipynb 파일을 참고하여 config 파일을 만들어주세요. 학습 구현은 train.py, train_aug.py(data augmentation 사용)의 두 가지가 있습니다. 
+모든 경우에 data augmentation을 사용하는 것이 성능이 더 좋습니다. (augmentation 방법을 변경하면 더 좋을수 있습니다.)
+data augmentation의 사용을 원하지 않는 경우 train.py, 사용을 원하는 경우 train_aug.py을 실행시켜주세요.
+학습 또는 추론에 사용 할 특정 GPU의 선택을 원하지 않는 경우 코드에서 os.environ["CUDA_VISIBLE_DEVICES"]="1"를 주석처리 해주세요.
+- data augmentation을 사용하지 않는 경우 아래와 같이 명령어를 실행시켜주세요.
+```python
+$ python train.py --config_path /path/your/config_path
+```
+- data augmentation을 사용할 경우 아래와 같이 명령어를 실행시켜주세요.
+```python
+$ python train_aug.py --config_path /path/your/config_path
+```
+# 4. Inference and Evaluation
+학습이 완료되면 inference_and_evaluation.ipynb 또는 inference_and_evaluation_Aug.ipynb를 참고하여 추론 및 평가를 수행할 수 있습니다.
+# 5. 학습결과
+## Quantitative Evaluation
+각 모델은 validation dataset에 대하여 AP@IOU 0.50:0.95, AP@IOU 0.50, AP@IOU 0.75을 정량적 평가 메트릭으로 사용합니다.
+
+|모델|AP@IOU 0.50:0.95|AP@IOU 0.50|AP@IOU 0.75|
+|------|---|---|---|
+|VGG NoAug|0.348|0.487|0.380|
+|VGG Aug|0.366|0.503|0.400|
+|ResNet50FPN Aug|0.446|0.576|0.480|
+## Qualitative Evaluation
+![FasterRCNN Result1](https://github.com/cjw94103/CycleGAN_reimpl/assets/45551860/1973bc1c-303a-4308-9bec-7ae86db4fe96)
+![FasterRCNN Result2](https://github.com/cjw94103/CycleGAN_reimpl/assets/45551860/faf6e82c-06c0-4e82-a417-84c8f4367ea5)
+![FasterRCNN Result3](https://github.com/cjw94103/CycleGAN_reimpl/assets/45551860/c5f3750d-222c-44aa-8e17-6470955f7f79)
