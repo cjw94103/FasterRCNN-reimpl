@@ -26,7 +26,7 @@ Faster RCNN에서 사용한 ROI Pooling은 Fast RCNN에서 사용한 방법과 �
 # 2. Dataset Preparation
 데이터셋은 coco2017을 사용합니다. 아래의 명령어를 이용하여 데이터셋을 다운로드 해주세요.
 ```python
-$ wget http://images.cocodataset.org/zips/train2017.zip   tree -L 2
+$ wget http://images.cocodataset.org/zips/train2017.zip
 $ wget http://images.cocodataset.org/zips/val2017.zip
 $ wget http://images.cocodataset.org/zips/test2017.zip
 
