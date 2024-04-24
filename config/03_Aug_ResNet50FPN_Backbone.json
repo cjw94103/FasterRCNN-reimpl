@@ -1,0 +1,19 @@
+{
+    "data_path": "./data/coco2017/",
+    "num_workers": 0,
+    "batch_size": 4,
+    "backbone": "resnet50fpn",
+    "anchor_sizes": null,
+    "anchor_ratio": null,
+    "pooler_output_size": null,
+    "pooler_sampling_ratio": null,
+    "epochs": 20,
+    "model_save_path": "./model_result/03_Aug_ResNet50FPN_Backbone/Augment_ResNet50FPN_model.pth",
+    "save_per_epochs": null,
+    "monitor": "loss",
+    "multi_gpu_flag": false,
+    "port_num": 14000,
+    "lr": 0.001,
+    "weight_decay": 0.0005,
+    "momentum": 0.9
+}

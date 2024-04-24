@@ -1,0 +1,32 @@
+{
+    "data_path": "./data/coco2017/",
+    "num_workers": 0,
+    "batch_size": 4,
+    "backbone": "vgg16",
+    "anchor_sizes": [
+        32,
+        64,
+        128,
+        256,
+        512
+    ],
+    "anchor_ratio": [
+        0.5,
+        1.0,
+        2.0
+    ],
+    "pooler_output_size": [
+        7,
+        7
+    ],
+    "pooler_sampling_ratio": 2,
+    "epochs": 20,
+    "model_save_path": "./model_result/01_Default_VGG_Backbone/Default_VGG_model.pth",
+    "save_per_epochs": null,
+    "monitor": "loss",
+    "multi_gpu_flag": false,
+    "port_num": 14000,
+    "lr": 0.001,
+    "weight_decay": 0.0005,
+    "momentum": 0.9
+}
