@@ -64,8 +64,8 @@ $ python train_aug.py --config_path /path/your/config_path
 |모델|AP@IOU 0.50:0.95|AP@IOU 0.50|AP@IOU 0.75|
 |------|---|---|---|
 |VGG NoAug|0.348|0.487|0.380|
-|VGG Aug|0.366|0.503|0.400|
-|ResNet50FPN Aug|0.446|0.576|0.480|
+|VGG Aug|0.339|0.474|0.366|
+|ResNet50FPN Aug|0.433|0.562|0.469|
 ## Qualitative Evaluation
 ![FasterRCNN Result1](https://github.com/cjw94103/CycleGAN_reimpl/assets/45551860/1973bc1c-303a-4308-9bec-7ae86db4fe96)
 ![FasterRCNN Result2](https://github.com/cjw94103/CycleGAN_reimpl/assets/45551860/faf6e82c-06c0-4e82-a417-84c8f4367ea5)
